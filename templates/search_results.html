@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            background-color: #f9f9f9;
+            margin-bottom: 10px;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        a {
+            color: #007BFF;
+            text-decoration: none;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Search Results</h1>
+    
+    <ul>
+        {% for result in results %}
+            <li>
+                <h3>{{ result.make }} {{ result.model }} ({{ result.year }})</h3>
+                <!-- Include other details if available -->
+                <!-- Example: Range, Battery Capacity, etc. -->
+                <p><a href="{{ url_for('details', car_id=result.id) }}">View Details</a></p>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete Vehicle Confirmation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        p {
+            color: #777;
+        }
+
+        button {
+            background-color: #DC3545;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #C82333;
+        }
+    </style>
+</head>
+<body>
+    <h1>Delete Vehicle Confirmation</h1>
+
+    <p>Are you sure you want to delete the following vehicle?</p>
+
+    <p><strong>Make:</strong> {{ car['make'] }}</p>
+    <p><strong>Model:</strong> {{ car['model'] }}</p>
+    <p><strong>Year:</strong> {{ car['year'] }}</p>
+
+    <form method="post" action="{{ url_for('delete', car_id=car['id']) }}">
+        <button type="submit">Confirm Delete</button>
+    </form>
+</body>
+</html>

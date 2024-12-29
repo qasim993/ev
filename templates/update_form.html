@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Electric Vehicle</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        form {
+            max-width: 400px;
+            margin: 20px 0;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #007BFF;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Update Electric Vehicle</h1>
+
+    <form method="post" action="{{ url_for('update', car_id=car['id']) }}">
+        <label for="make">Make:</label>
+        <input type="text" id="make" name="make" value="{{ car['make'] }}" required>
+        
+        <label for="model">Model:</label>
+        <input type="text" id="model" name="model" value="{{ car['model'] }}" required>
+        
+        <label for="year">Year:</label>
+        <input type="text" id="year" name="year" value="{{ car['year'] }}" required>
+        
+        <!-- Include other fields as needed -->
+
+        <button type="submit">Update Vehicle</button>
+    </form>
+</body>
+</html>

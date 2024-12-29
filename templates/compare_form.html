@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compare Electric Vehicles</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            width: 300px;
+        }
+
+        label {
+            margin-bottom: 10px;
+        }
+
+        select {
+            margin-bottom: 20px;
+        }
+
+        button {
+            padding: 10px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Compare Electric Vehicles</h1>
+    <form method="post" action="/compare">
+        <label for="car1">Select Car 1:</label>
+        <select id="car1" name="car1" required>
+            <!-- Populate options dynamically based on available cars -->
+            {% for car in cars %}
+                <option value="{{ car.id }}">{{ car.make }} {{ car.model }} ({{ car.year }})</option>
+            {% endfor %}
+        </select>
+
+        <label for="car2">Select Car 2:</label>
+        <select id="car2" name="car2" required>
+            <!-- Populate options dynamically based on available cars -->
+            {% for car in cars %}
+                <option value="{{ car.id }}">{{ car.make }} {{ car.model }} ({{ car.year }})</option>
+            {% endfor %}
+        </select>
+
+        <button type="submit">Compare Cars</button>
+    </form>
+</body>
+</html>

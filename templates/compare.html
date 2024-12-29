@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comparison Result</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        p {
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>Comparison Result</h1>
+    <p>Comparison between {{ car1.make }} {{ car1.model }} ({{ car1.year }}) and {{ car2.make }} {{ car2.model }} ({{ car2.year }}):</p>
+    
+    <table>
+        <tr>
+            <th>Attribute</th>
+            <th>{{ car1.make }} {{ car1.model }} ({{ car1.year }})</th>
+            <th>{{ car2.make }} {{ car2.model }} ({{ car2.year }})</th>
+        </tr>
+        <tr>
+            <td>Make</td>
+            <td>{{ car1.make }}</td>
+            <td>{{ car2.make }}</td>
+        </tr>
+        <tr>
+            <td>Model</td>
+            <td>{{ car1.model }}</td>
+            <td>{{ car2.model }}</td>
+        </tr>
+        <tr>
+            <td>Year</td>
+            <td>{{ car1.year }}</td>
+            <td>{{ car2.year }}</td>
+        </tr>
+        <!-- Add more attributes as needed -->
+    </table>
+</body>
+</html>
